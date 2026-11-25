@@ -3,31 +3,32 @@ This directory contains the .def and the .yml files to build singularity/apptain
 
 # Packages 
 Some of the main packages are listed below -
-1. I/O and basic manipulation 
+
+## I/O and basic manipulation 
 - SpatialExperiment
 - SpatialFeatureExperiment
 - Voyager
 - HDF5Array
-\n
-2. QC and normalization
+
+## QC and normalization
 - SpotSweeper
 - SpaNorm
 - scater
 - scran
-\n
-3. Spatially variable gene selection
+
+## Spatially variable gene selection
 - nnSVG
 - batchSVG
-\n
-4. Spatial domain identification/clustering
+
+## Spatial domain identification/clustering
 - BayesSpace
 - Banksy
-\n
-5. Annotation
+
+## Annotation
 - SingleR
-\n
-6. Visualization
+
+## Visualization
 - ggspavis
 - patchwork
-\n
+
 Rstudio server can also be launched using this container. 
