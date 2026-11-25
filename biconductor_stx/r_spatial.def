@@ -1,0 +1,29 @@
+Bootstrap: docker
+From: mambaorg/micromamba:2.9-ubuntu24.04
+
+%files
+    r_spatial.yml /opt/r_spatial.yml
+
+%post
+    micromamba install -y -n base -f /opt/r_spatial.yml
+    micromamba clean --all --yes
+
+    export DEBIAN_FRONTEND=noninteractive
+    apt-get update
+    apt-get install -y --no-install-recommends \
+        wget ca-certificates libssl-dev libclang-dev libpq5 \
+        psmisc sudo lsb-release locales
+    wget -O /tmp/rstudio-server.deb https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2026.10.0-233-amd64.deb
+    apt-get install -y /tmp/rstudio-server.deb
+    rm -f /tmp/rstudio-server.deb
+    rm -rf /var/lib/apt/lists/*
+
+%environment
+    export PATH=/opt/conda/bin:/usr/lib/rstudio-server/bin:$PATH
+    export PROJ_DATA=/opt/conda/share/proj
+    export PROJ_LIB=/opt/conda/share/proj
+    export LC_ALL=C.UTF-8
+    export LANG=C.UTF-8
+
+%runscript
+    exec "$@"
