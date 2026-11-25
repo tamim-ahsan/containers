@@ -8,19 +8,24 @@ Some of the main packages are listed below -
 - SpatialFeatureExperiment
 - Voyager
 - HDF5Array
+
 2. QC and normalization
 - SpotSweeper
 - SpaNorm
 - scater
 - scran
+
 3. Spatially variable gene selection
 - nnSVG
 - batchSVG
+
 4. Spatial domain identification/clustering
 - BayesSpace
 - Banksy
+
 5. Annotation
 - SingleR
+
 6. Visualization
 - ggspavis
 - patchwork
